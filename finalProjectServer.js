@@ -1,5 +1,5 @@
 /*
-    CMSC335: Project #5
+    CMSC335: Final Exam Project
     Jessie Lian (116970907)
 */
 
@@ -16,7 +16,7 @@ require("dotenv").config({ path: path.resolve(__dirname, 'credentialsDontPost/.e
 const uri = process.env.MONGO_CONNECTION_STRING;
 
 /* Database and collection: */
-const databaseAndCollection = {db: "CMSC335DB", collection: "bobaOrders"};
+const databaseAndCollection = {db: "CMSC335DB", collection: "cafeOrders"};
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 app.use(bodyParser.urlencoded({extended:false}));
@@ -30,53 +30,69 @@ const client = new MongoClient('mongodb+srv://jlianMG:lM9vqUUAvTux8H1V@cluster0.
 
 const portNumber = 5000;
 
-async function getCoffee() {
-    const coffeeResponse = await fetch('https://coffee.alexflipnote.dev/random.json')
-    await coffeeResponse.json()
+/* Retrieves random pictures of coffee from API. */
+async function nextImage() {
+    const response = await fetch('https://coffee.alexflipnote.dev/random.json').catch(error => console.error('Error fetching coffee picture:', error));
+    return await response.json()
         .then(data => {
-
-            return data;
-
             console.log('Random Coffee Picture URL:', data.file);
-            // You can use the image URL to display the coffee picture on your website
-            const img = document.createElement('img');
-            img.src = data.file;
-            document.body.appendChild(img);
-
-
-        })
-        .catch(error => console.error('Error fetching coffee picture:', error));
+            return data.file;
+        });
 }
 
+/* Home Page */
+app.get("/", async (request, response) => {
 
+    coffeePic = "<img id = \"coffee\" src = \"";
 
-app.get("/", (request, response) => {
-    //<img id = "coffee" src = "https://coffee.alexflipnote.dev/random">
-    apiData = getCoffee();
-    coffeePicture = `<img id = "coffee" src = "${apiData.file}" alt = "Random Coffee Picture">`
-
-
+    let imgSRC = nextImage();
+    await imgSRC.then(function(result) {
+        console.log(result);
+        coffeePic += result + "\" alt = \"Random pictures of coffee.\">";
+    });
+    
+    console.log(coffeePic);
     variables = {
-        coffeePicture: coffeePicture
+        coffeePic: coffeePic
     }
 
     response.render("home", variables);
 });
 
+/* Place Order Page */
 app.get("/placeOrder", (request, response) => {
     response.render("placeOrder");
 });
 
+/* Order Confirmed */
 app.post("/placeOrderConfirmation", async (request, response) => {
     let {drink, name, phone, message} = request.body;
+
+    // Data stored in Mongodb.
     orderPlace(drink, name, phone, message);
-    response.render("home");
+
+    coffeePic = "<img id = \"coffee\" src = \"";
+
+    let imgSRC = nextImage();
+    await imgSRC.then(function(result) {
+        console.log(result);
+        coffeePic += result + "\" alt = \"Random pictures of coffee.\">";
+    });
+    
+    console.log(coffeePic);
+    variables = {
+        coffeePic: coffeePic
+    }
+
+    response.render("placeOrderConfirmation", variables);
 });
 
+/* Order History, Input Name */
 app.get("/orderHistory", (request, response) => {
     response.render("orderHistory");
 });
 
+/* Order History List */
 app.post("/orderHistoryList", async (request, response) => {
 
     let {orderName} = request.body;
