@@ -38,6 +38,7 @@ p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
     margin-inline: 4em;
+    margin-bottom: -1em;
     position: relative;
     z-index: 1;
 }
@@ -184,6 +185,12 @@ textarea {
 }
 
 #coffee {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -3em;
+    margin-bottom: 3em;
     height: 24em;
     border-radius: 5em;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
