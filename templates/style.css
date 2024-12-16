@@ -1,0 +1,160 @@
+body {
+    background-color: #FFFCFA;
+    margin: 0;
+}
+
+.header {
+    position: sticky;
+    width: auto;
+    height: auto;
+    background-color: black;
+    padding: 1.8em;
+    align-items: center;
+    text-align: right;
+}
+
+#home {
+    font-size: 3em;
+    color: brown;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#subtitle {
+    font-size: 2em;
+    color: brown;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.bg {
+    position: relative;
+    top: -2em;
+    padding-inline: 3em;
+}
+
+p {
+    font-size: 1.6em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin-inline: 4em;
+    position: relative;
+    z-index: 1;
+}
+
+form {
+    position: relative;
+    z-index: 1;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 7.5em;
+    font-weight: 100;
+    font-variant: small-caps;
+    color: brown;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+hr {
+    margin-top: 1.6em;
+    margin-bottom: 0.8em;
+}
+
+.category {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    font-weight: 100;
+    font-variant: small-caps;
+    color: black;
+    position: relative;
+    z-index: 1;
+}
+
+input {
+    width: 20em;
+    height: 2.5em;
+    padding-inline: 1em;
+    border-radius: 0.75em;
+    border-width: 1px;
+}
+
+input[type = reset], input[type = submit] {
+    width: 12em;
+    background-color: brown;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 12em;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-top: 2em;
+}
+
+input[type = reset] {
+    width: 8em;
+    margin-right: 1em;
+}
+
+.centerContent {
+    margin-top: 5em;
+}
+
+.homeButton {
+    width: max-content;
+    background-color: brown;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    text-decoration: none;
+    border: none;
+    border-radius: 12em;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-top: 2.5em;
+    padding: 1em;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-inline: 2em;
+}
+
+#drinks {
+    width: 20em;
+    height: 2.5em;
+    padding-inline: 1em;
+    border-width: 2px;
+    border-radius: 0.75em;
+}
+
+#stain {
+    width: 28em;
+    position: absolute; 
+    left: -2em;
+    top: -4.5em;
+    mix-blend-mode: multiply;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.orderPrompt {
+    font-size: 1.2em;
+    margin-right: 0.2em;
+}
+
+textarea {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    padding: 0.5em;
+    font-weight: 200;
+    margin-top: 0.75em;
+    border-radius: 0.2em;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <meta charset = "utf-8">
+        <title>Place Order</title>
+        <link rel = "stylesheet" href = "style.css" type = "text/css">
+    </head>
+
+    <body>
+        <div class = "header">
+            <a href="/" id = "home">Home</a>
+        </div>
+
+        <div class = "bg">
+
+            <img id = "stain" src = "images/drink_stain.png" alt = "Image of a coffee stain.">
+
+            <h1>Place Order</h1>
+
+            <form action = "/placeOrder">
+                
+                <fieldset>
+                    <span class = "category">Drink Type</span><br><br>
+
+                    <input id = "drinks" list = "drink-options" name = "drink-choice">
+
+                    <datalist id = "drink-options">
+
+                        <option value = "Black Milk Tea">
+                        <option value = "Jasmine Green Milk Tea">
+                        <option value = "Oolong Milk Tea">
+                        <option value = "Black Tea">
+                        <option value = "Green Tea">
+                        <option value = "Oolong Tea">
+                        <option value = "Matcha Latte">
+
+                    </datalist><br><br>
+
+                    <hr>
+
+                    <span class = "category">Information</span><br><br>
+
+                    
+                    <span class = "orderPrompt">Name:</span>
+                    <input type = "text"><br><br>
+
+                    <span class = "orderPrompt">Phone #:</span>
+
+                    <input id = "tel" type = "tel">
+                    <br><br>
+
+                    <span class = "orderPrompt">Message:</span><br>
+
+                    <textarea rows = "8" cols = "56"></textarea><br>
+
+                </fieldset><br>
+                
+                <input type = "reset">
+                <input type = "submit" value = "Submit">
+            
+            </form>
+        </div>
+    </body>
+</html>
