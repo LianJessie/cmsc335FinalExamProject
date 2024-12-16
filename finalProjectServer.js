@@ -19,6 +19,7 @@ const uri = process.env.MONGO_CONNECTION_STRING;
 const databaseAndCollection = {db: "CMSC335DB", collection: "bobaOrders"};
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
+app.use(express.static(__dirname + '/templates'));
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.set("views", path.resolve(__dirname, "templates"));
@@ -51,7 +52,7 @@ async function getCoffee() {
 app.get("/", (request, response) => {
     //<img id = "coffee" src = "https://coffee.alexflipnote.dev/random">
     apiData = getCoffee();
-    coffeePicture = `<img id = "coffee" src = "${apiData.file}" alt = "Random Coffee Picture">`
+    coffeePicture = `<img id = "coffee" src = ${apiData.file} alt = "Random Coffee Picture">`
 
 
     variables = {
