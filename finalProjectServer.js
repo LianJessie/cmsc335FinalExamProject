@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.set("views", path.resolve(__dirname, "templates"));
 app.set("view engine", "ejs");
 
-app.use(express.static(__dirname + '/templates'));
+//app.use(express.static(__dirname + '/templates'));
 
 const client = new MongoClient('mongodb+srv://jlianMG:lM9vqUUAvTux8H1V@cluster0.txnqy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
