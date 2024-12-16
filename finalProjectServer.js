@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.set("views", path.resolve(__dirname, "templates"));
 app.set("view engine", "ejs");
 
-const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
+const client = new MongoClient('mongodb+srv://jlianMG:lM9vqUUAvTux8H1V@cluster0.txnqy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 const portNumber = 5000;
 
@@ -51,10 +51,12 @@ async function getCoffee() {
 app.get("/", (request, response) => {
     //<img id = "coffee" src = "https://coffee.alexflipnote.dev/random">
     apiData = getCoffee();
-    apiPicture = `<img id = "coffee" src = "${apiData.file}" alt = "Random Coffee Picture">`
+    coffeePicture = `<img id = "coffee" src = "${apiData.file}" alt = "Random Coffee Picture">`
 
 
-    variables = {coffeePicture: apiPicture}
+    variables = {
+        coffeePicture: coffeePicture
+    }
 
     response.render("home", variables);
 });
@@ -142,7 +144,8 @@ async function orderPlace(drink, name, phone, message) {
 }
 
 app.listen(portNumber);
-/*
+console.log(`Web server started and running at http://localhost:${portNumber}`);
+
 const prompt = "Stop to shutdown the server: ";
 process.stdout.write(prompt);
 process.stdin.on("readable", function () {
@@ -163,4 +166,4 @@ process.stdin.on("readable", function () {
         process.stdout.write(prompt);
         process.stdin.resume();
     }
-});*/
+});
