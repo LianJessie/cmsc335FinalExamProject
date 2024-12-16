@@ -4,8 +4,8 @@ Group Members: Jessie Lian (116970907)
 
 App Description: A basic website in which you can order drinks and view history of past purchases.
 
-Youtube Video Demo Link: [https://www.youtube.com/watch?v=RMX1Cz5LtA8]
+Youtube Video Demo Link: [https://www.youtube.com/watch?v=RMX1Cz5LtA8](https://www.youtube.com/watch?v=RMX1Cz5LtA8)
 
-APIs: Coffee API ([https://coffee.alexflipnote.dev/])
+APIs: Coffee API ([https://coffee.alexflipnote.dev/](https://www.youtube.com/watch?v=RMX1Cz5LtA8))
 
 Contact Email: jlian1@terpmail.umd.edu
