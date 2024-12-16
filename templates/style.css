@@ -158,3 +158,32 @@ textarea {
     margin-top: 0.75em;
     border-radius: 0.2em;
 }
+
+#historyName {
+    border-width: 2px;
+}
+
+#entrylist {
+    position: relative; 
+    z-index: 1;
+}
+
+.orderEntry {
+    width: 100vh;
+    height: auto;
+    background-color: white;
+    color:#999;
+    padding: 1.6em;
+    position: relative; 
+    z-index: 1;
+    border-radius: 1em;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    font-size: 1.6em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 1em;
+}
+
+#coffee {
+    height: 24em;
+    border-radius: 5em;
+}

@@ -18,12 +18,12 @@
 
             <h1>Place Order</h1>
 
-            <form action = "/placeOrder">
+            <form action = "/placeOrderConfirmation" method = "post">
                 
                 <fieldset>
                     <span class = "category">Drink Type</span><br><br>
 
-                    <input id = "drinks" list = "drink-options" name = "drink-choice">
+                    <input id = "drinks" list = "drink-options" name = "drink">
 
                     <datalist id = "drink-options">
 
@@ -43,16 +43,16 @@
 
                     
                     <span class = "orderPrompt">Name:</span>
-                    <input type = "text"><br><br>
+                    <input type = "text" name = "name"><br><br>
 
                     <span class = "orderPrompt">Phone #:</span>
 
-                    <input id = "tel" type = "tel">
+                    <input id = "tel" type = "tel" name = "phone">
                     <br><br>
 
                     <span class = "orderPrompt">Message:</span><br>
 
-                    <textarea rows = "8" cols = "56"></textarea><br>
+                    <textarea rows = "8" cols = "56" name = "message"></textarea><br>
 
                 </fieldset><br>
                 
